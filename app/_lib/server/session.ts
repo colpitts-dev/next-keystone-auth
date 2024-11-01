@@ -98,7 +98,7 @@ export function ironSessions<Session extends SessionData>({
   secure = process.env.NODE_ENV === "production",
   domain,
   sameSite,
-}: StatelessSessionsOptions = {}): SessionStrategy<Session, any> {
+}: StatelessSessionsOptions = {}): SessionStrategy<Session> {
   // atleast 192-bit in base64
   if (secret.length < 32) {
     throw new Error("The session secret must be at least 32 characters long");
